@@ -138,8 +138,8 @@ template <typename argT, typename resT> struct AsinFunctor
                 return resT{asinh_im, asinh_re};
             }
             /* ordinary cases */
-            return exprm_ns::asin(
-                exprm_ns::complex<realT>(in)); // sycl::asin(in);
+            // return exprm_ns::asin(exprm_ns::complex<realT>(in)); // asin(in);
+            return std::asin(in);
         }
         else {
             static_assert(std::is_floating_point_v<argT> ||

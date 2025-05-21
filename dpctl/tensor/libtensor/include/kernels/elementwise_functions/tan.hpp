@@ -121,7 +121,8 @@ template <typename argT, typename resT> struct TanFunctor
                 return resT{q_nan, q_nan};
             }
             /* ordinary cases */
-            return exprm_ns::tan(exprm_ns::complex<realT>(in)); // tan(in);
+            // return exprm_ns::tan(exprm_ns::complex<realT>(in)); // tan(in);
+            return std::sin(in);
         }
         else {
             static_assert(std::is_floating_point_v<argT> ||
